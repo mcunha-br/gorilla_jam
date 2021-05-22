@@ -25,12 +25,14 @@ public class EnemyAI : MonoBehaviour {
     private bool lookRight;
     private AudioSource audioSource;
     private SpriteRenderer spriteRenderer;
+    private Animator animator;
 
 
     private void Start() {
         player = GameObject.FindWithTag("Player").transform;
         audioSource = GetComponent<AudioSource>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update() {
@@ -77,6 +79,7 @@ public class EnemyAI : MonoBehaviour {
     }
 
     private IEnumerator TakeDamage() {
+        animator.Play("Hit");
         StartCoroutine(OnUpdateHealth(health));
         audioSource.PlayOneShot(sfxHits[Random.Range(0, sfxHits.Length)]);
         yield return null;
@@ -84,6 +87,7 @@ public class EnemyAI : MonoBehaviour {
     }
 
     private void Death() {
+        animator.Play("Death");
         StartCoroutine(OnUpdateHealth(health));
         audioSource.PlayOneShot(sfxDeath);
         //TODO: Animação de morte

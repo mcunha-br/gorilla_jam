@@ -3414,18 +3414,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5795452932465961106, guid: 157e793f83429a35dbe3030422b6b977, type: 3}
-      propertyPath: punchs.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5795452932465961106, guid: 157e793f83429a35dbe3030422b6b977, type: 3}
-      propertyPath: punchs.Array.data[0]
-      value: PunchOne
-      objectReference: {fileID: 0}
-    - target: {fileID: 5795452932465961106, guid: 157e793f83429a35dbe3030422b6b977, type: 3}
-      propertyPath: punchs.Array.data[1]
-      value: PunchTwo
-      objectReference: {fileID: 0}
     - target: {fileID: 5795452932465961107, guid: 157e793f83429a35dbe3030422b6b977, type: 3}
       propertyPath: m_Name
       value: Enemy

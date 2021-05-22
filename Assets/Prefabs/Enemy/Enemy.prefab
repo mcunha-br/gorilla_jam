@@ -56,6 +56,9 @@ MonoBehaviour:
   attackMask:
     serializedVersion: 2
     m_Bits: 64
+  punchs:
+  - PunchOne
+  - PunchTwo
   sfxPunch: {fileID: 8300000, guid: cf2ac3bf55b46c2b2a12b2ed87132f4f, type: 3}
   sfxDeath: {fileID: 8300000, guid: 679ffb8313ccfc164a29efce717e7423, type: 3}
   sfxHits:

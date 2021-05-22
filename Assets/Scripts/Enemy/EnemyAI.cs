@@ -32,7 +32,7 @@ public class EnemyAI : MonoBehaviour {
     }
 
     private void Update() {
-        
+        LookAt();
     }
 
     public void ApplyDamage(float damage) {

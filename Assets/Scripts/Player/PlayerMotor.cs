@@ -5,7 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMotor : MonoBehaviour
 {
-    
+    GameState gameState;
+
     Rigidbody2D rig;  
 
     Vector2 moviment;
@@ -18,7 +19,7 @@ public class PlayerMotor : MonoBehaviour
 
     void Start()
     {
-   
+        
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
@@ -51,6 +52,8 @@ public class PlayerMotor : MonoBehaviour
     }
     public void OnDeath()
     {
+        
         anim.SetTrigger("IsDeath");
+        Destroy(gameObject.GetComponent<CapsuleCollider2D>());
     }
 }

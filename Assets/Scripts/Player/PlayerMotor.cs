@@ -13,7 +13,7 @@ public class PlayerMotor : MonoBehaviour
     Animator anim;
 
     [SerializeField]
-    float life = 100;
+    public float life = 100;
 
 
     void Start()
@@ -51,6 +51,6 @@ public class PlayerMotor : MonoBehaviour
     }
     public void OnDeath()
     {
-        anim.SetBool("IsDeath", true);
+        anim.SetTrigger("IsDeath");
     }
 }

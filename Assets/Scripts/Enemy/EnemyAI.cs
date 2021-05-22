@@ -57,7 +57,7 @@ public class EnemyAI : MonoBehaviour {
 
 		Collider2D colInfo = Physics2D.OverlapCircle(posisiton, attackRange, attackMask);
 		if (colInfo != null) {
-			//TODO: Dar dano no player colInfo.GetComponent<>().ApplyDamage(strong);
+			colInfo.GetComponent<PlayerMotor>().ApplyDamage(strong);
 		}
     }
 

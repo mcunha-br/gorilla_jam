@@ -7,11 +7,8 @@ public class PlayerController : MonoBehaviour
 {
 
     PlayerMotor motorsScript;
-    Animator anim;
- 
-    
-    [SerializeField]
-    float damage = 5;
+    Animator anim; 
+   
 
     [SerializeField]
     float speed;

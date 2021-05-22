@@ -9,9 +9,10 @@ public class PlayerAttack : MonoBehaviour
     
     public void OnTriggerEnter2D(Collider2D collision)
     {
-         if (gameObject.CompareTag("Enemy"))
+         if (collision.gameObject.CompareTag("Enemy"))
         {
             collision.GetComponent<EnemyAI>().ApplyDamage(5);
+            print("EntrouAqui");
         }
     }
 }

@@ -14,6 +14,7 @@ public class EnemyAI : MonoBehaviour {
     public float attackRange = 1f;
     public Vector3 attackOffset = new Vector2(1.5f, 0);
     public LayerMask attackMask;
+    public string[] punchs;
 
     [Header("Settings SFX")]
     public AudioClip sfxPunch;
@@ -27,7 +28,6 @@ public class EnemyAI : MonoBehaviour {
     private SpriteRenderer spriteRenderer;
     private Animator animator;
 
-
     private void Start() {
         player = GameObject.FindWithTag("Player").transform;
         audioSource = GetComponent<AudioSource>();
@@ -38,10 +38,8 @@ public class EnemyAI : MonoBehaviour {
     }
 
     private void AttackAnimation() {
-        animator.Play("PunchOne");
+        animator.Play(punchs[Random.Range(0, punchs.Length)]);
     }
-
-
 
     private void Update() {
         LookAt();
@@ -64,7 +62,7 @@ public class EnemyAI : MonoBehaviour {
         Vector3 posisiton = transform.position;
 		posisiton += transform.right * attackOffset.x;
 		posisiton += transform.up * attackOffset.y;
-        
+
 		Collider2D colInfo = Physics2D.OverlapCircle(posisiton, attackRange, attackMask);
 		if (colInfo != null) {
 			colInfo.GetComponent<PlayerMotor>().ApplyDamage(strong);

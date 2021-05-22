@@ -85,8 +85,11 @@ public class EnemyAI : MonoBehaviour {
         animator.Play("Hit");
         StartCoroutine(OnUpdateHealth(health));
         audioSource.PlayOneShot(sfxHits[Random.Range(0, sfxHits.Length)]);
-        yield return null;
-        //TODO: Feedback para o player
+        spriteRenderer.color = Color.red;
+
+        yield return new WaitForSeconds(0.1f);
+        spriteRenderer.color = Color.white;
+        
     }
 
     private void Death() {

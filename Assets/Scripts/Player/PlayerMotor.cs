@@ -44,9 +44,13 @@ public class PlayerMotor : MonoBehaviour
             OnDeath();
 
         }
+          else
+        {
+            anim.SetBool("TakeDamage", true);
+        }
     }
     public void OnDeath()
     {
-       
+        anim.SetBool("IsDeath", true);
     }
 }

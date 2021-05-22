@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(PlayerMotor))]
 public class PlayerController : MonoBehaviour
 {
 
@@ -10,9 +11,6 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     float speed;
-
-
-
 
     float horizontal;
     float vertical;

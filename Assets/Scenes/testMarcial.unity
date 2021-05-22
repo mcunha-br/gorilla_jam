@@ -2037,7 +2037,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 5534761012940620032, guid: 3a2c38e6b795f5d4295b6a9082907244, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3306,10 +3306,6 @@ PrefabInstance:
     - target: {fileID: 5795452932465961107, guid: 157e793f83429a35dbe3030422b6b977, type: 3}
       propertyPath: m_Name
       value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 5795452932465961107, guid: 157e793f83429a35dbe3030422b6b977, type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5795452932465961108, guid: 157e793f83429a35dbe3030422b6b977, type: 3}
       propertyPath: m_RootOrder

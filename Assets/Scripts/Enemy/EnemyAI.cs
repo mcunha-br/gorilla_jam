@@ -24,15 +24,18 @@ public class EnemyAI : MonoBehaviour {
     private bool death = false;
     private bool lookRight;
     private AudioSource audioSource;
+    private SpriteRenderer spriteRenderer;
 
 
     private void Start() {
         player = GameObject.FindWithTag("Player").transform;
         audioSource = GetComponent<AudioSource>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update() {
         LookAt();
+        NormalizeSprite();
     }
 
     public void ApplyDamage(float damage) {
@@ -67,6 +70,10 @@ public class EnemyAI : MonoBehaviour {
             lookRight = false;
             transform.Rotate(0, 180, 0);
         }
+    }
+
+    private void NormalizeSprite() {
+        spriteRenderer.sortingOrder = (player.position.y < transform.position.y) ? 1 : 2;        
     }
 
     private IEnumerator TakeDamage() {

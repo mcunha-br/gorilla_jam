@@ -21,7 +21,7 @@ public class EnemyAI : MonoBehaviour {
     public AudioClip sfxDeath;
     public AudioClip[] sfxHits;
 
-    private Transform player;
+    public Transform player {get; private set; }    
     private bool death = false;
     private bool lookRight;
     private AudioSource audioSource;
@@ -32,17 +32,14 @@ public class EnemyAI : MonoBehaviour {
         player = GameObject.FindWithTag("Player").transform;
         audioSource = GetComponent<AudioSource>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        animator = GetComponent<Animator>();
-
-        InvokeRepeating("AttackAnimation", 5, 5);
+        animator = GetComponent<Animator>();        
     }
 
-    private void AttackAnimation() {
+    public void AttackAnimation() {
         animator.Play(punchs[Random.Range(0, punchs.Length)]);
     }
 
     private void Update() {
-        LookAt();
         NormalizeSprite();
     }
 
@@ -96,6 +93,7 @@ public class EnemyAI : MonoBehaviour {
         animator.Play("Death");
         StartCoroutine(OnUpdateHealth(health));
         audioSource.PlayOneShot(sfxDeath);
+        GetComponent<Collider2D>().enabled = false;
         //TODO: Animação de morte
     }
 

@@ -33,6 +33,8 @@ public class EnemyAI : MonoBehaviour {
         audioSource = GetComponent<AudioSource>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+
+        InvokeRepeating("Attack", 5, 5);
     }
 
     private void Update() {
@@ -56,6 +58,8 @@ public class EnemyAI : MonoBehaviour {
         Vector3 posisiton = transform.position;
 		posisiton += transform.right * attackOffset.x;
 		posisiton += transform.up * attackOffset.y;
+
+        animator.Play("PunchOne");
 
 		Collider2D colInfo = Physics2D.OverlapCircle(posisiton, attackRange, attackMask);
 		if (colInfo != null) {

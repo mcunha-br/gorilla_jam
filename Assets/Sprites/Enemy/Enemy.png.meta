@@ -35,6 +35,9 @@ TextureImporter:
   - first:
       213: -8714037839689498976
     second: Enemy_11
+  - first:
+      213: -7875468939738959075
+    second: Enemy_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -151,10 +154,10 @@ TextureImporter:
       name: Enemy_0
       rect:
         serializedVersion: 2
-        x: 69
-        y: 776
-        width: 115
-        height: 199
+        x: 0
+        y: 750
+        width: 250
+        height: 250
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,10 +175,10 @@ TextureImporter:
       name: Enemy_1
       rect:
         serializedVersion: 2
-        x: 316
-        y: 774
-        width: 118
-        height: 194
+        x: 250
+        y: 750
+        width: 250
+        height: 250
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,10 +196,10 @@ TextureImporter:
       name: Enemy_2
       rect:
         serializedVersion: 2
-        x: 569
-        y: 779
-        width: 118
-        height: 194
+        x: 500
+        y: 750
+        width: 250
+        height: 250
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,10 +217,10 @@ TextureImporter:
       name: Enemy_3
       rect:
         serializedVersion: 2
-        x: 70
-        y: 529
-        width: 161
-        height: 194
+        x: 0
+        y: 500
+        width: 250
+        height: 250
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -235,10 +238,10 @@ TextureImporter:
       name: Enemy_4
       rect:
         serializedVersion: 2
-        x: 290
-        y: 524
-        width: 144
-        height: 194
+        x: 250
+        y: 500
+        width: 250
+        height: 250
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,10 +259,10 @@ TextureImporter:
       name: Enemy_5
       rect:
         serializedVersion: 2
-        x: 569
-        y: 529
-        width: 163
-        height: 194
+        x: 500
+        y: 500
+        width: 250
+        height: 250
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -277,10 +280,10 @@ TextureImporter:
       name: Enemy_6
       rect:
         serializedVersion: 2
-        x: 69
-        y: 276
-        width: 115
-        height: 199
+        x: 0
+        y: 250
+        width: 250
+        height: 250
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -298,10 +301,10 @@ TextureImporter:
       name: Enemy_7
       rect:
         serializedVersion: 2
-        x: 319
-        y: 275
-        width: 128
-        height: 198
+        x: 250
+        y: 250
+        width: 250
+        height: 250
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -319,10 +322,10 @@ TextureImporter:
       name: Enemy_8
       rect:
         serializedVersion: 2
-        x: 569
-        y: 276
-        width: 115
-        height: 199
+        x: 500
+        y: 250
+        width: 250
+        height: 250
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -340,10 +343,10 @@ TextureImporter:
       name: Enemy_10
       rect:
         serializedVersion: 2
-        x: 45
-        y: 26
-        width: 139
-        height: 206
+        x: 250
+        y: 0
+        width: 250
+        height: 250
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -358,13 +361,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_11
+      name: Enemy_9
       rect:
         serializedVersion: 2
-        x: 255
-        y: 50
-        width: 244
-        height: 118
+        x: 0
+        y: 0
+        width: 250
+        height: 250
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -372,8 +375,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0aebef5f0c4811780800000000000000
-      internalID: -8714037839689498976
+      spriteID: d13bc3fa9b6b4b290800000000000000
+      internalID: -7875468939738959075
       vertices: []
       indices: 
       edges: []

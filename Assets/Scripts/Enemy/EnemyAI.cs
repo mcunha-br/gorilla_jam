@@ -15,13 +15,20 @@ public class EnemyAI : MonoBehaviour {
     public Vector3 attackOffset = new Vector2(1.5f, 0);
     public LayerMask attackMask;
 
+    [Header("Settings SFX")]
+    public AudioClip sfxPunch;
+    public AudioClip sfxDeath;
+    public AudioClip[] sfxHits;
+
     private Transform player;
     private bool death = false;
     private bool lookRight;
+    private AudioSource audioSource;
 
 
     private void Start() {
         player = GameObject.FindWithTag("Player").transform;
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update() {
@@ -54,22 +61,24 @@ public class EnemyAI : MonoBehaviour {
     public void LookAt() {
         if(transform.position.x > player.position.x && !lookRight) {
             lookRight = true;
-            transform.rotation = Quaternion.identity;
+            transform.Rotate(0, 180, 0);
 
         } else if(transform.position.x < player.position.x && lookRight) {
             lookRight = false;
-            transform.rotation = Quaternion.Euler(0, 180, 0);
+            transform.Rotate(0, 180, 0);
         }
     }
 
     private IEnumerator TakeDamage() {
         StartCoroutine(OnUpdateHealth(health));
+        audioSource.PlayOneShot(sfxHits[Random.Range(0, sfxHits.Length)]);
         yield return null;
         //TODO: Feedback para o player
     }
 
     private void Death() {
         StartCoroutine(OnUpdateHealth(health));
+        audioSource.PlayOneShot(sfxDeath);
         //TODO: Animação de morte
     }
 

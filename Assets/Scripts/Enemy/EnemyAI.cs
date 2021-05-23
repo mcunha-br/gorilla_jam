@@ -100,7 +100,7 @@ public class EnemyAI : MonoBehaviour {
         StartCoroutine(OnUpdateHealth(health));
         audioSource.PlayOneShot(sfxDeath);
         GetComponent<Collider2D>().enabled = false;      
-        GameManager.Instance.WinAndLoseGame("You Win", winner);
+        GameManager.Instance.WinAndLoseGame("You Win", winner, Color.green);
     }
 
     void OnDrawGizmosSelected() {

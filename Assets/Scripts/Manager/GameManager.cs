@@ -70,14 +70,15 @@ public class GameManager : MonoBehaviour {
         txtCoutdownGame.text = countdownGame.ToString("00");
 
         if(countdownGame <= 0)
-            WinAndLoseGame("You Lose", lose);
+            WinAndLoseGame("You Lose", lose, Color.red);
     }
 
-    public void WinAndLoseGame(string messenge, AudioClip clip) {
+    public void WinAndLoseGame(string messenge, AudioClip clip, Color color) {
         state = GameState.FINISH;
         audioSource.PlayOneShot(clip);
         loseAndWinnerPanel.SetActive(true);
         txtLoseAndWinner.text = messenge;
+        txtLoseAndWinner.color = color;
         state = GameState.WAIT;
         Cursor.visible = true;
     }

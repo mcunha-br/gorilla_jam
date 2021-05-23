@@ -71,7 +71,7 @@ public class PlayerMotor : MonoBehaviour
           if ( life <= 0)
         {
             OnDeath();            
-            GameManager.Instance.WinAndLoseGame("You Lose!!", sfxLose);
+            GameManager.Instance.WinAndLoseGame("You Lose!!", sfxLose, Color.red);
             anim.SetTrigger("IsDeath");           
 
         }

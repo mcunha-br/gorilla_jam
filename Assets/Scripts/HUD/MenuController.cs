@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour {
+    public GameObject credtits;
 
     public void SetButtons(string value) {
         switch (value) {
@@ -10,11 +11,11 @@ public class MenuController : MonoBehaviour {
             break;
 
             case "CREDITS":
-                //TODO: Abrir um menu com o nome dos desenvolvedores
+                credtits.SetActive(true);
             break;
 
             case "MENU":
-                //TODO: Voltar ao menu depois que entrar na tela de 'CREDITS'
+                credtits.SetActive(false);                
             break;            
         }
     }

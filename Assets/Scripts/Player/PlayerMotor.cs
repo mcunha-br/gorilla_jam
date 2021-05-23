@@ -25,6 +25,8 @@ public class PlayerMotor : MonoBehaviour
 
     public bool onDeath = false;
 
+    public AudioClip sfxLose;
+
 
 
 
@@ -70,7 +72,7 @@ public class PlayerMotor : MonoBehaviour
           if ( life <= 0)
         {
             OnDeath();
-            GameManager.Instance.WinAndLoseGame("You Lose!!");
+            GameManager.Instance.WinAndLoseGame("You Lose!!", sfxLose);
             anim.SetTrigger("IsDeath");           
 
         }

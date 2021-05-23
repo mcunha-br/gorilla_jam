@@ -69,6 +69,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: bc03a538e2037c3aba85105f2a18f763, type: 3}
   - {fileID: 8300000, guid: ec331f46e393d2ef092e61101410eabc, type: 3}
   - {fileID: 8300000, guid: 9b43c262b8d1f51b29d6de70720c2fcb, type: 3}
+  winner: {fileID: 8300000, guid: 9314d6dcdce88d7b5a9c4288ea11d564, type: 3}
 --- !u!212 &5795452932465961109
 SpriteRenderer:
   m_ObjectHideFlags: 0

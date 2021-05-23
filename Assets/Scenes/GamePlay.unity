@@ -2186,8 +2186,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5244794611857307030, guid: f49767df7c004a44e84b97b80a6c61ab, type: 3}
       propertyPath: life
-      value: 100
+      value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5244794611857307030, guid: f49767df7c004a44e84b97b80a6c61ab, type: 3}
+      propertyPath: sfxLose
+      value: 
+      objectReference: {fileID: 8300000, guid: f8f91b8a0491502518a9313a176f409e, type: 3}
     - target: {fileID: 8274495062285814890, guid: f49767df7c004a44e84b97b80a6c61ab, type: 3}
       propertyPath: m_Layer
       value: 0

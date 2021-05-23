@@ -580,20 +580,21 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: '<b>Programmer:</b>
 
-    Marcial Lincoln
+    Marcial Lincoln (Enemy AI)
 
     Matheus Vargas
+    (Player)
 
 
     <b>Art:</b>
 
-    Matheus
-    Vargas
+    Matheus Vargas
 
 
     <b>HUD UI:</b>
 
-    Marcial Lincoln
+    Marcial
+    Lincoln
 
 
     <b>Music and SFX:</b>

@@ -11,8 +11,9 @@ public class PlayerAttack : MonoBehaviour
     {
          if (collision.gameObject.CompareTag("Enemy"))
         {
+            
             collision.GetComponent<EnemyAI>().ApplyDamage(5);
-            print("EntrouAqui");
+          
         }
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMotor : MonoBehaviour
 {
-    GameState gameState;
+    GameState state;
 
     Rigidbody2D rig;  
 
@@ -19,7 +19,7 @@ public class PlayerMotor : MonoBehaviour
 
     void Start()
     {
-        
+        state = GameManager.instance.state;
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
@@ -38,22 +38,20 @@ public class PlayerMotor : MonoBehaviour
         anim.SetFloat("XVelocity", moviment.x, 0.1f, Time.deltaTime);
     }   
      public void ApplyDamage(float damage)
-    {
+    {      
+
         life -= damage;
-          if ( life < 0)
+          if ( life <= 0)
         {
-            OnDeath();
+            GameManager.instance.ChangeState(GameState.inDeath);
+            anim.SetTrigger("IsDeath");           
 
         }
           else
         {
             anim.SetTrigger("TakeDamage");
         }
+       
     }
-    public void OnDeath()
-    {
-        
-        anim.SetTrigger("IsDeath");
-        Destroy(gameObject.GetComponent<CapsuleCollider2D>());
-    }
+  
 }

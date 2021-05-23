@@ -1,5 +1,6 @@
 public enum GameState
 {
     inGame,
-    inDeath
+    inDeath,
+    inAttack
 }

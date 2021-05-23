@@ -38,13 +38,13 @@ public class PlayerController : MonoBehaviour
 
 
 
-        state = GameManager.instance.state;
+        // state = GameManager.instance.state;
 
 
-        if( state != GameState.inGame)
-        {
-            return;
-        }
+        // if( state != GameState.inGame)
+        // {
+        //     return;
+        // }
         
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");

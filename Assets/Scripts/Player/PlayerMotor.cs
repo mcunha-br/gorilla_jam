@@ -19,7 +19,7 @@ public class PlayerMotor : MonoBehaviour
 
     void Start()
     {
-        state = GameManager.instance.state;
+        // state = GameManager.instance.state;
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
@@ -43,7 +43,7 @@ public class PlayerMotor : MonoBehaviour
         life -= damage;
           if ( life <= 0)
         {
-            GameManager.instance.ChangeState(GameState.inDeath);
+            // GameManager.instance.ChangeState(GameState.inDeath);
             anim.SetTrigger("IsDeath");           
 
         }

@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour {
     [Header("Settings Finishing")]
     public GameObject loseAndWinnerPanel;
     public Text txtLoseAndWinner;
+    public AudioClip lose;
 
     private AudioSource audioSource;
     private int countdownGame = 99;
@@ -67,6 +68,9 @@ public class GameManager : MonoBehaviour {
     private void CountdownGame() {
         countdownGame--;
         txtCoutdownGame.text = countdownGame.ToString("00");
+
+        if(countdownGame <= 0)
+            WinAndLoseGame("You Lose", lose);
     }
 
     public void WinAndLoseGame(string messenge, AudioClip clip) {

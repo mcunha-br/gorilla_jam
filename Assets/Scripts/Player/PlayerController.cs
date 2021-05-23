@@ -34,17 +34,13 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        AttackTime += Time.deltaTime;
+        AttackTime += Time.deltaTime;     
 
 
-
-        // state = GameManager.instance.state;
-
-
-        // if( state != GameState.inGame)
-        // {
-        //     return;
-        // }
+         if(motorsScript.onDeath == true)
+         {
+            return;
+         }
         
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");

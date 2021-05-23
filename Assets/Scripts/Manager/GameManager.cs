@@ -75,6 +75,7 @@ public class GameManager : MonoBehaviour {
         loseAndWinnerPanel.SetActive(true);
         txtLoseAndWinner.text = messenge;
         state = GameState.WAIT;
+        Cursor.visible = true;
     }
 
 

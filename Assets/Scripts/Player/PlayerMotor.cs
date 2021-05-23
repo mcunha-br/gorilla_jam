@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMotor : MonoBehaviour
 {
-    GameState state;
+   
 
     Rigidbody2D rig;  
 
@@ -14,12 +14,18 @@ public class PlayerMotor : MonoBehaviour
     Animator anim;
 
     [SerializeField]
+    
     public float life = 100;
+
+
+    SpriteRenderer spriteRenderer;
+
+    public bool onDeath = false;
 
 
     void Start()
     {
-        // state = GameManager.instance.state;
+        
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
@@ -43,15 +49,29 @@ public class PlayerMotor : MonoBehaviour
         life -= damage;
           if ( life <= 0)
         {
-            // GameManager.instance.ChangeState(GameState.inDeath);
+            OnDeath();
             anim.SetTrigger("IsDeath");           
 
         }
           else
         {
+            StartCoroutine("TakeDamageColor");
             anim.SetTrigger("TakeDamage");
         }
        
+    }
+
+    public IEnumerator TakeDamageColor()
+    {
+        spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+
+        spriteRenderer.color = Color.white;
+
+    }
+    public void OnDeath()
+    {
+        onDeath = true;
     }
   
 }

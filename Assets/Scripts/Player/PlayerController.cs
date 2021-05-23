@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     PlayerMotor motorsScript;
     Animator anim;
 
-    GameState state;
+   
 
     [SerializeField]
     float speed;
@@ -18,8 +18,10 @@ public class PlayerController : MonoBehaviour
     float vertical;
     
     [SerializeField]
-    float AttackTime;
+    public float AttackTime;
     float CanAttack = 1f;
+
+    
 
     
     
@@ -34,40 +36,40 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        AttackTime += Time.deltaTime;     
+        AttackTime += Time.deltaTime;       
 
 
-         if(motorsScript.onDeath == true)
-         {
-            return;
-         }
-        
-        horizontal = Input.GetAxisRaw("Horizontal");
-        vertical = Input.GetAxisRaw("Vertical");
 
-        
-        
-        if(AttackTime >= CanAttack)
-        {
-            
-            if (Input.GetMouseButtonDown(0))
+            if (motorsScript.onDeath == true)
             {
-           
-                anim.SetTrigger("AttackLeft");
-                AttackTime = 0;
-           
-             }
-            else if (Input.GetMouseButton(1))
-            {
-       
-                anim.SetTrigger("AttackRight");
-                AttackTime = 0;
-
+                return;
             }
-        }
 
+            horizontal = Input.GetAxisRaw("Horizontal");
+            vertical = Input.GetAxisRaw("Vertical");
+
+
+
+            if (AttackTime >= CanAttack)
+            {
+
+                if (Input.GetMouseButtonDown(0))
+                {
+
+                    anim.SetTrigger("AttackLeft");
+                    AttackTime = 0;
+
+                }
+                else if (Input.GetMouseButton(1))
+                {
+
+                    anim.SetTrigger("AttackRight");
+                    AttackTime = 0;
+
+                }
+            }
+        
     }
-
     public void FixedUpdate()
     {
         Vector2 motion = new Vector2(horizontal, vertical);

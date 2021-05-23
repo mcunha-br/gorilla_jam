@@ -1,10 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
-public enum GameState {WAIT, INGAME, DEATH}
+public enum GameState {WAIT, INGAME, FINISH}
 
 public class GameManager : MonoBehaviour {
+    public static GameManager Instance;
     public static GameState state = GameState.WAIT;
 
     [Header("Settings Countdown Fight")]
@@ -17,6 +20,15 @@ public class GameManager : MonoBehaviour {
 
     private AudioSource audioSource;
     private int countdownGame = 99;
+
+    public GameObject loseAndWinnerPanel;
+    public Text txtLoseAndWinner;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
 
     private void Start() {
         Cursor.visible = false;
@@ -51,5 +63,26 @@ public class GameManager : MonoBehaviour {
     private void CountdownGame() {
         countdownGame--;
         txtCoutdownGame.text = countdownGame.ToString("00");
+    }
+
+    public void WinAndLoseGame(string messenge)
+    {
+        state = GameState.FINISH;
+        loseAndWinnerPanel.SetActive(true);
+        txtLoseAndWinner.text = messenge;
+    }
+     public void SetButtons(string value)
+    {
+        switch(value)
+        {
+            case "RESTART":
+                SceneManager.LoadScene("GamePlay");               
+             
+            break;                    
+
+            case "MENU":
+                SceneManager.LoadScene("GameMenu");                
+            break;
+        }
     }
 }

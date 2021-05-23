@@ -5,7 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMotor : MonoBehaviour
 {
-   
+    
+
+    Transform target;
 
     Rigidbody2D rig;  
 
@@ -17,10 +19,14 @@ public class PlayerMotor : MonoBehaviour
     
     public float life = 100;
 
+    PlayerController playerController;
 
     SpriteRenderer spriteRenderer;
 
     public bool onDeath = false;
+
+
+
 
 
     void Start()
@@ -28,20 +34,34 @@ public class PlayerMotor : MonoBehaviour
         
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        playerController = GetComponent<PlayerController>();
+        target = FindObjectOfType<EnemyAI>().transform;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (transform.position.x > target.position.x)
+        {
+            transform.rotation = Quaternion.Euler(0, -180, 0);
+        }
+        else
+        {
+            transform.rotation = Quaternion.identity;
+        }
+
         rig.velocity = moviment;
 
     }   
 
     public void Moviment(Vector2 moviment, float speed)
     {
-        
-        this.moviment = moviment.normalized * speed;       
-        anim.SetFloat("XVelocity", moviment.x, 0.1f, Time.deltaTime);
+        if(GameManager.state == GameState.INGAME)
+        {
+            this.moviment = moviment.normalized * speed;       
+            anim.SetFloat("XVelocity", moviment.x, 0.1f, Time.deltaTime);
+        }
     }   
      public void ApplyDamage(float damage)
     {      
@@ -50,6 +70,7 @@ public class PlayerMotor : MonoBehaviour
           if ( life <= 0)
         {
             OnDeath();
+            GameManager.Instance.WinAndLoseGame("You Lose!!");
             anim.SetTrigger("IsDeath");           
 
         }
@@ -63,6 +84,7 @@ public class PlayerMotor : MonoBehaviour
 
     public IEnumerator TakeDamageColor()
     {
+        playerController.AttackTime = 0;
         spriteRenderer.color = Color.red;
         yield return new WaitForSeconds(0.1f);
 
@@ -73,5 +95,6 @@ public class PlayerMotor : MonoBehaviour
     {
         onDeath = true;
     }
+    
   
 }

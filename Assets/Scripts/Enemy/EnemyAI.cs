@@ -21,6 +21,9 @@ public class EnemyAI : MonoBehaviour {
     public AudioClip sfxDeath;
     public AudioClip[] sfxHits;
 
+    [Space]
+    public AudioClip winner;
+
     public Transform player {get; private set; }    
     private bool death = false;
     private bool lookRight;
@@ -96,8 +99,8 @@ public class EnemyAI : MonoBehaviour {
         animator.Play("Death");
         StartCoroutine(OnUpdateHealth(health));
         audioSource.PlayOneShot(sfxDeath);
-        GetComponent<Collider2D>().enabled = false;
-        //TODO: Animação de morte
+        GetComponent<Collider2D>().enabled = false;      
+        GameManager.Instance.WinAndLoseGame("You Win", winner);
     }
 
     void OnDrawGizmosSelected() {

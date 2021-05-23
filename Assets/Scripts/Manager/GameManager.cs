@@ -18,11 +18,13 @@ public class GameManager : MonoBehaviour {
     [Header("Settings Countdown Game")]
     public Text txtCoutdownGame;
 
+    [Header("Settings Finishing")]
+    public GameObject loseAndWinnerPanel;
+    public Text txtLoseAndWinner;
+
     private AudioSource audioSource;
     private int countdownGame = 99;
 
-    public GameObject loseAndWinnerPanel;
-    public Text txtLoseAndWinner;
 
     private void Awake()
     {
@@ -67,12 +69,14 @@ public class GameManager : MonoBehaviour {
         txtCoutdownGame.text = countdownGame.ToString("00");
     }
 
-    public void WinAndLoseGame(string messenge)
-    {
+    public void WinAndLoseGame(string messenge, AudioClip clip) {
         state = GameState.FINISH;
+        audioSource.PlayOneShot(clip);
         loseAndWinnerPanel.SetActive(true);
         txtLoseAndWinner.text = messenge;
     }
+
+
      public void SetButtons(string value)
     {
         switch(value)

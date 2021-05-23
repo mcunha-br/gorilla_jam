@@ -4176,6 +4176,7 @@ MonoBehaviour:
   txtCoutdownGame: {fileID: 2124614877}
   loseAndWinnerPanel: {fileID: 198851977}
   txtLoseAndWinner: {fileID: 337640807}
+  lose: {fileID: 8300000, guid: f8f91b8a0491502518a9313a176f409e, type: 3}
 --- !u!4 &1907745580
 Transform:
   m_ObjectHideFlags: 0

@@ -14,6 +14,11 @@ public class WalkAI : StateMachineBehaviour {
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+        enemyAI.LookAt();
+
+        if(GameManager.state != GameState.INGAME)
+            return;
+
         var target = Vector2.MoveTowards(body.position, enemyAI.player.position, speed * Time.fixedDeltaTime);
         body.MovePosition(target);
 
@@ -21,7 +26,6 @@ public class WalkAI : StateMachineBehaviour {
         if(distance <= enemyAI.attackRange * 2)
             enemyAI.AttackAnimation();
 
-        enemyAI.LookAt();
     }
 
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {

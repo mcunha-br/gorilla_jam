@@ -1,18 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PunchAI : StateMachineBehaviour {
+public class EntryAI : StateMachineBehaviour {
 
-    private float cooldown;
+    private EnemyAI enemyAI;
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        cooldown = 10;
+        enemyAI = animator.GetComponent<EnemyAI>();
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        cooldown -= Time.fixedDeltaTime;
-        if(cooldown <= 0)
+        enemyAI.LookAt();
+        if(GameManager.state == GameState.INGAME)
             animator.Play("Idle");
     }
 

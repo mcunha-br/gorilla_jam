@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
    
 
     [SerializeField]
-    float speed;
+     float speed;
 
     float horizontal;
     float vertical;
@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
 
             if (motorsScript.onDeath == true)
             {
+                
                 return;
             }
 

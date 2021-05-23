@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMotor : MonoBehaviour
 {
+
     
 
     Transform target;
@@ -26,10 +27,6 @@ public class PlayerMotor : MonoBehaviour
     public bool onDeath = false;
 
     public AudioClip sfxLose;
-
-
-
-
 
     void Start()
     {
@@ -63,7 +60,9 @@ public class PlayerMotor : MonoBehaviour
         {
             this.moviment = moviment.normalized * speed;       
             anim.SetFloat("XVelocity", moviment.x, 0.1f, Time.deltaTime);
+            anim.SetFloat("YVelocity", moviment.y, 0.1f, Time.deltaTime);
         }
+        
     }   
      public void ApplyDamage(float damage)
     {      
@@ -71,7 +70,7 @@ public class PlayerMotor : MonoBehaviour
         life -= damage;
           if ( life <= 0)
         {
-            OnDeath();
+            OnDeath();            
             GameManager.Instance.WinAndLoseGame("You Lose!!", sfxLose);
             anim.SetTrigger("IsDeath");           
 
@@ -83,7 +82,6 @@ public class PlayerMotor : MonoBehaviour
         }
        
     }
-
     public IEnumerator TakeDamageColor()
     {
         playerController.AttackTime = 0;
@@ -95,6 +93,7 @@ public class PlayerMotor : MonoBehaviour
     }
     public void OnDeath()
     {
+        moviment = Vector2.zero;
         onDeath = true;
     }
     

@@ -43,6 +43,8 @@ public class GameManager : MonoBehaviour {
         audioSource.PlayOneShot(clips[0]);
         txtCountdownFight.text = "Fight";
         countdownFight.Play("Fight");
+
+        yield return new WaitForSeconds(1f);
         state = GameState.INGAME;
 
         InvokeRepeating("CountdownGame", 3, 2);

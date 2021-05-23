@@ -74,6 +74,7 @@ public class GameManager : MonoBehaviour {
         audioSource.PlayOneShot(clip);
         loseAndWinnerPanel.SetActive(true);
         txtLoseAndWinner.text = messenge;
+        state = GameState.WAIT;
     }
 
 

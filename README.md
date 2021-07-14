@@ -1,7 +1,7 @@
 # JungleBox
 ### Gorilla Jam
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://mcunha-br.github.io/)
 
 Projeto desenvolvido para Gorilla Jam.
 Você pode conferir esse game em [mcunha.itch.io](https://mcunha.itch.io/junglebox "itch Marcial Lincoln")
